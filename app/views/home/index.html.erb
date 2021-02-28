@@ -1,2 +1,44 @@
-<h2>Lisbon Weather</h2>
-<p><%= @test %></p>
+
+
+<h2><%= @city %></h2>
+<p><%= @current_weather %></p>
+<p><%= @current_temperature %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @planet_to_display.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @planet_to_display.description %>
+</p>
+
+<p>
+  <strong>Weather:</strong>
+  <%= @planet_to_display.weather %>
+</p>
+
+<p>
+  <strong>Temperature min:</strong>
+  <%= @planet_to_display.temperature_min %>
+</p>
+
+<p>
+  <strong>Temperature max:</strong>
+  <%= @planet_to_display.temperature_max %>
+</p>
+
+<p>
+  <strong>Background:</strong>
+  <%= @planet_to_display.background %>
+</p>
+
+
+
+
+
+<%= link_to 'Show', @planet_to_display %>
+
+
+</div>

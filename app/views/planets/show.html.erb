@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @planet.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @planet.description %>
+</p>
+
+<p>
+  <strong>Weather:</strong>
+  <%= @planet.weather %>
+</p>
+
+<p>
+  <strong>Temperature min:</strong>
+  <%= @planet.temperature_min %>
+</p>
+
+<p>
+  <strong>Temperature max:</strong>
+  <%= @planet.temperature_max %>
+</p>
+
+<p>
+  <strong>Background:</strong>
+  <%= @planet.background %>
+</p>
+
+<%= link_to 'Edit', edit_planet_path(@planet) %> |
+<%= link_to 'Back', planets_path %>

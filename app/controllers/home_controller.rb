@@ -1,18 +1,18 @@
 class HomeController < ApplicationController
   def index
-
 	@planets = Planet.all
 
-    get_current_weather_forecast()
+	if params[:search].present?
+		@city = params[:search]
+	end
 
-  end
+	get_current_weather_forecast()
+  end	
 
   def get_current_weather_forecast()
   	begin
 
-  		@city = 'Moscow'
-
-  		forecast = Forecast.new("OpenWeather", 1)
+ 		forecast = Forecast.new("OpenWeather", 1)
     	response = forecast.city(@city)
 
     	@current_weather = response['weather'][0]['main']
@@ -29,12 +29,11 @@ class HomeController < ApplicationController
  		end
 
  	rescue
- 		# aldereen
-
- 		raise
+ 		no_planet_found() 
  	end
   end
 
+  # Chooses aldereen
   def no_planet_found()
   	@planet_to_display = @planets[0]
   end

@@ -1,44 +1,29 @@
+<% if @city.present? %>
 
 
-<h2><%= @city %></h2>
-<p><%= @current_weather %></p>
-<p><%= @current_temperature %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @planet_to_display.name %>
-</p>
+<p><%= @city %>. <%= @current_weather %>?. <%= @current_temperature %>ºC?</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @planet_to_display.description %>
-</p>
+<p>IT'S LIKE </p>
+<h2><%= @planet_to_display.name.upcase %></h2>
+<p> OUT THERE</p>
+<h4><%= @planet_to_display.description %></h4>
 
 <p>
-  <strong>Weather:</strong>
-  <%= @planet_to_display.weather %>
+    Background: <%= @planet_to_display.background.inspect %>
 </p>
 
-<p>
-  <strong>Temperature min:</strong>
-  <%= @planet_to_display.temperature_min %>
-</p>
-
-<p>
-  <strong>Temperature max:</strong>
-  <%= @planet_to_display.temperature_max %>
-</p>
-
-<p>
-  <strong>Background:</strong>
-  <%= @planet_to_display.background %>
-</p>
-
-
-
-
-
-<%= link_to 'Show', @planet_to_display %>
-
-
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <%= image_tag(@planet_to_display.background, :class => "d-block w-100" ,:alt => "planet") %>
+        </div>
+    </div>
 </div>
+
+<% link_to 'Show', @planet_to_display %>
+<% else %>
+
+<p>Please search for a city</p>
+
+<% end %>

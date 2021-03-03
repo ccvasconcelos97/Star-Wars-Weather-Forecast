@@ -1,23 +1,19 @@
 <% if @city.present? %>
 
-        <p><%= @city.capitalize %>. <%= @current_weather %>?. <%= @current_temperature %>ºC?</p>
 
+<div class="card">
+
+    <div class="card-body">
+        <% if @planet_to_display.id != 1%>
+        <p><%= @city.capitalize %>. <%= @current_weather %>?. <%= @current_temperature %>ºC?</p>
+        <% end %>
         <p>It's like <strong><em><%= @planet_to_display.name.upcase %></em></strong> out there</p>
         <p><strong><em><%= @planet_to_display.description %></em></strong></p>
+    </div>
+    <%= image_tag(@planet_to_display.background, :class => "card-img-bottom" ,:alt => "planet") %>
+</div>
 
-        <p>
-            Background: <%= @planet_to_display.background.inspect %>
-        </p>
-
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <%= image_tag(@planet_to_display.background, :class => "d-block w-100" ,:alt => "planet") %>
-                </div>
-            </div>
-        </div>
-
-        <% link_to 'Show', @planet_to_display %>
+<% link_to 'Show', @planet_to_display %>
 <% else %>
 
 <p>Please search for a city</p>

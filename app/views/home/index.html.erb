@@ -1,11 +1,11 @@
 <% if @city.present? %>
 
-
 <div class="card">
 
     <div class="card-body">
         <% if @planet_to_display.id != 1%>
-        <p><%= @city.capitalize %>. <%= @current_weather %>?. <%= @current_temperature %>ºC?</p>
+        <h4><%= @city.capitalize %></h4>
+        <p><%= @current_weather %>? <%= @current_temperature %>ºC?</p>
         <% end %>
         <p>It's like <strong><em><%= @planet_to_display.name.upcase %></em></strong> out there</p>
         <p><strong><em><%= @planet_to_display.description %></em></strong></p>
@@ -15,7 +15,14 @@
 
 <% link_to 'Show', @planet_to_display %>
 <% else %>
-
-<p>Please search for a city</p>
+<br>
+<%= link_to 'Hamburg', root_path(:search => "Hamburg"), :class => "btn btn-link" %>
+<%= link_to 'Porto', root_path(:search => "Porto"), :class => "btn btn-link"%>
+<%= link_to 'Moscow', root_path(:search => "Moscow"), :class => "btn btn-link"%>
+<%= link_to 'Tokyo', root_path(:search => "Tokyo"), :class => "btn btn-link"%>
+<%= link_to 'Sydney', root_path(:search => "Sydney"), :class => "btn btn-link"%>
+<%= link_to 'New York', root_path(:search => "New York"), :class => "btn btn-link"%>
+<%= link_to 'London', root_path(:search => "London"), :class => "btn btn-link"%>
+<%= link_to 'Rio de Janeiro', root_path(:search => "Rio de Janeiro"), :class => "btn btn-link"%>
 
 <% end %>

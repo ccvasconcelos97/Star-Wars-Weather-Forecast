@@ -1,28 +1,44 @@
 <% if @city.present? %>
 
-<div class="card">
+  <div class="card">
 
-    <div class="card-body">
-        <% if @planet_to_display.id != 1%>
-        <h4><%= @city.capitalize %></h4>
-        <p><%= @current_weather %>? <%= @current_temperature %>ºC?</p>
-        <% end %>
-        <p>It's like <strong><em><%= @planet_to_display.name.upcase %></em></strong> out there</p>
-        <p><strong><em><%= @planet_to_display.description %></em></strong></p>
+    <div class="carousel slide" id="carousel-929556">
+      <ol class="carousel-indicators">
+        <li data-slide-to="0" data-target="#carousel-929556" class="active">
+        </li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <%= image_tag(@planet_to_display.background, :class => "d-block w-100", :alt => "planet") %>
+          <div class="carousel-caption">
+            <% if @planet_to_display.id != 1 %>
+              <p><%= @current_weather %>? <%= @current_temperature %>ºC?</p>
+            <% end %>
+            <br>
+            <br>
+            <small>It's like</small>
+            <h1><strong><%= @planet_to_display.name.upcase %></strong></h1>
+            <small>out there</small>
+            <br>
+            <br>
+            <p><em><%= @planet_to_display.description %></em></p>
+          </div>
+        </div>
+      </div>
+
+
     </div>
-    <%= image_tag(@planet_to_display.background, :class => "card-img-bottom" ,:alt => "planet") %>
-</div>
 
-<% link_to 'Show', @planet_to_display %>
+    <% link_to 'Show', @planet_to_display %>
 <% else %>
-<br>
-<%= link_to 'Hamburg', root_path(:search => "Hamburg"), :class => "btn btn-link" %>
-<%= link_to 'Porto', root_path(:search => "Porto"), :class => "btn btn-link"%>
-<%= link_to 'Moscow', root_path(:search => "Moscow"), :class => "btn btn-link"%>
-<%= link_to 'Tokyo', root_path(:search => "Tokyo"), :class => "btn btn-link"%>
-<%= link_to 'Sydney', root_path(:search => "Sydney"), :class => "btn btn-link"%>
-<%= link_to 'New York', root_path(:search => "New York"), :class => "btn btn-link"%>
-<%= link_to 'London', root_path(:search => "London"), :class => "btn btn-link"%>
-<%= link_to 'Rio de Janeiro', root_path(:search => "Rio de Janeiro"), :class => "btn btn-link"%>
+  <br>
+  <%= link_to 'Hamburg', root_path(:search => "Hamburg"), :class => "btn btn-link" %>
+  <%= link_to 'Porto', root_path(:search => "Porto"), :class => "btn btn-link" %>
+  <%= link_to 'Moscow', root_path(:search => "Moscow"), :class => "btn btn-link" %>
+  <%= link_to 'Tokyo', root_path(:search => "Tokyo"), :class => "btn btn-link" %>
+  <%= link_to 'Sydney', root_path(:search => "Sydney"), :class => "btn btn-link" %>
+  <%= link_to 'New York', root_path(:search => "New York"), :class => "btn btn-link" %>
+  <%= link_to 'London', root_path(:search => "London"), :class => "btn btn-link" %>
+  <%= link_to 'Rio de Janeiro', root_path(:search => "Rio de Janeiro"), :class => "btn btn-link" %>
 
 <% end %>

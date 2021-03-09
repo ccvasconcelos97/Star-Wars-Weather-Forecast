@@ -8,7 +8,7 @@ class Forecast
 	end
 
 	def city(city_name)
-    	self.class.get("/data/2.5/weather?q="+city_name+"&appid="+Rails.application.credentials.secret_key_openweather+"&units=metric", @options)
+    	self.class.get("/data/2.5/weather?q="+city_name+"&appid=cedcf3bfb1ce617857b208c1fc7c6d3f&units=metric", @options)
 	end
 
 end

@@ -8,7 +8,7 @@
 
 Planet.create(name: 'Alderaan', description: 'Try again, try another city.', weather: nil, temperature_min: 0, temperature_max: 0, background: 'alderaan.png', source: 'https://starwars.fandom.com/wiki/Destruction_of_Alderaan')
 Planet.create(name: 'Kamino', description: 'Wet.', weather: 'Rain', temperature_min: -10, temperature_max: 40, background: 'kamino.jpg', source: 'https://www.artstation.com/artwork/JwvXd')
-Planet.create(name: 'Bespin', description: 'Fog, mist, cloud. Can\'t see a thing.', weather: 'Clouds', temperature_min: -10, temperature_max: 40, background: 'bespin.jpeg', source: 'https://www.artstation.com/artwork/ybXK58')
+Planet.create(name: 'Bespin', description: 'Fog, mist, cloud. Can\'t see a thing.', weather: 'Clouds', temperature_min: -10, temperature_max: 40, background: 'bespin.png', source: 'https://www.artstation.com/artwork/ybXK58')
 Planet.create(name: 'Endor', description: 'Temperate, but grey and cloudy.', weather: 'Clouds', temperature_min: 5, temperature_max: 25, background: 'endor.jpg', source: 'https://www.artstation.com/artwork/XNWvR')
 Planet.create(name: 'Dagobah', description: 'Hot and wet, and not in a good way.', weather: 'Drizzle', temperature_min: 20, temperature_max: 50, background: 'dagobah.jpg', source: 'https://www.artstation.com/artwork/EK31v')
 Planet.create(name: 'Yavin 4', description: 'Hot, but with some cloud in the sky.', weather: 'Clouds', temperature_min: 20, temperature_max: 40, background: 'yavin.jpg', source: 'https://www.artstation.com/artwork/xzlBWW')

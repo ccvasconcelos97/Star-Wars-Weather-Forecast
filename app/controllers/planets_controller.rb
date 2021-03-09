@@ -64,6 +64,6 @@ class PlanetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def planet_params
-      params.require(:planet).permit(:name, :description, :weather, :temperature_min, :temperature_max, :background)
+      params.require(:planet).permit(:name, :description, :weather, :temperature_min, :temperature_max, :background, :source)
     end
 end
